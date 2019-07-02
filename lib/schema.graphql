@@ -4,6 +4,7 @@ type Course {
 	teacher: String
 	description: String
 	topic: String
+	people: [Student]
 }
 
 type Query {
@@ -60,4 +61,6 @@ type Mutation {
 	editStudent(_id: ID!, input: StudentEditInput): Student
 	"Elimina un estudiante"
 	deleteStudent(_id: ID!): Student
+	"Agrega una persona al curso"
+	addPeople(courseID: ID!, personID: ID!): Course
 }
